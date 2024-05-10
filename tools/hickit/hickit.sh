@@ -1,0 +1,2 @@
+#!/bin/bash
+cat /share/home/mliu/shareb/mliu/evaluate_impute/tools/hickit/file_list.txt  | sed -e "s/.pairs.gz//g" | parallel -j 20 --progress "/share/Data/public/biosoft/hickit-0.1.1_x64-linux/hickit -P1 -M -s1 -i /share/home/mliu/shareb/mliu/evaluate_impute/data/simulation_hic/Cell2020/hic/dip_pairs/{}.pairs.gz -Sr1m -c1 -r10m -c2 -b5m -b1m -O /shareb/mliu/evaluate_impute/data/imputed_data/hickit/Cell2020/{}.1m.1.3dg"
